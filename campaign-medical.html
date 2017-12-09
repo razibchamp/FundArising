@@ -1,6 +1,7 @@
 
 
 <body>
+ <form action = "campaign-medical.php" id="usrform">
 	
 	<table align="center" border="1" width="1000" height="550"  cellpadding="10" cellspacing="0" >
 		
@@ -39,10 +40,10 @@
 						<tr>
 							<td>Medical Name: <br/>
 							<input type="text" name="Name"/></td>
+							
+							<td>Email : <br/>
+							<input type="text" name="email"/></td>
 				
-						
-							<td>Amount of money :  <br/>
-							<input type="text" name="money"/></td>
 						</tr>
 						<tr>
 						    <td>Phone Number: <br/>
@@ -54,24 +55,31 @@
 							<input type="text" name="money"/></td>
 						</tr>	
 						<tr>
-						    <td>Phone Number: <br/>
-							<input type="text" name="phoneNum"/></td>
 				
-
 						    <td>Email : <br/>
 							<input type="text" name="email"/></td>
+							
+							<td>Proof : 
+							<input type = "file" value = "Browse" name = "proof"/></td>
+				
+
+						   
 						</tr>
-						<tr>
-
-						    <td>Proof : <br/>
-							<input type = "text" name = "proof"/></td>
-					
-
-							<td>Proof : <br/>
-							<input type = "text" name = "proof"/></td>
 						
-						    <td>Description : <br/>
-							<input type = "text" name = "description"/></td>
+						<tr>
+						    <td>
+							<form id = "usrform">
+							  Description: <input type="text" name="description">
+							  </form>
+                             
+                            
+                             <br>
+                             <textarea rows="4" cols="50" name="description" form = "usrform">
+                              Enter text here...</textarea>
+							  
+							
+							</td>
+         
 				
 				         </tr>
 						 <tr>
@@ -100,4 +108,5 @@
 			<td  valign="top" colspan="2"><center>Copyright 2017</center></td>
 		</tr>	
 	</table>
+	</form>
 </body>
