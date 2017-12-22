@@ -1,21 +1,19 @@
 
 
 <body>
- <form action = "campaign-medical.php" id="usrform">
 	
 	<table align="center" border="1" width="1000" height="550"  cellpadding="10" cellspacing="0" >
 		
 		<tr>
 			<td height="30" align="center">
-			<img src = "img/FundRaising.jpg" alt = "campaign.jpg" width = "200px" height = "150" align = "right" >
-			<h2>CREATE FUND RAISING FOR MEDICAL</h2>
+			<img src = "img/Fundraising.jpg" align = "center" alt = "campaign.jpg" width = "200px" height = "100" align = "right" >
 			</td>
 		</tr>
 		<tr>
 			<td height="20">
 				
-				<a href="index.html">Home</a>
-				<a href="login.html">Login</a> 
+				<a href="index.html">Home</a>&nbsp &nbsp &nbsp
+				<a href="login.html">Login</a> &nbsp &nbsp &nbsp
 				<a href="registration.html">Register</a>
 				
 			</td>			
@@ -25,75 +23,38 @@
 				
 			<td>
 				
+				<!-- <h1> -->
+					<!-- This page is to create new fund rising event -->
+				<!-- </h1> -->
+				<!-- <B> -->
+					<!-- choose your causes -->
+				<!-- </B> -->
+				
 				<h1>
-					This page is to create new fund rising event for Medical
+					This page is to create new fund rising event for charity
 				</h1>
 
-				<form action="index.html" >
+				<form action="campaignMedicalImg.html">
 					<fieldset width="400">
-					<table align="center">
+					<table align="left">
 						<colgroup span="2">
 							<col width="150"></col>
 							<col width="150"></col>
 						</colgroup>
 						
 						<tr>
-							<td>Medical Name: <br/>
-							<input type="text" name="Name"/></td>
-							
-							<td>Email : <br/>
-							<input type="text" name="email"/></td>
-				
+							<td>
+								Title: <input type="text" size="60" name="title"/>
+							</td>
 						</tr>
-						<tr>
-						    <td>Phone Number: <br/>
-							<input type="text" name="phoneNum"/></td>
-                     	
-						
-				
-							<td>Amount of money :  <br/>
-							<input type="text" name="money"/></td>
-						</tr>	
-						<tr>
-				
-						    <td>Email : <br/>
-							<input type="text" name="email"/></td>
-							
-							<td>Proof : 
-							<input type = "file" value = "Browse" name = "proof"/></td>
-				
-
-						   
+						<tr>			
+							<td>
+								<br/>Description: <br/><textarea type="text" cols="70" rows="15" name="title"></textarea>
+							</td>
 						</tr>
 						
 						<tr>
-						    <td>
-							<form id = "usrform">
-							  Description: <input type="text" name="description">
-							  </form>
-                             
-                            
-                             <br>
-                             <textarea rows="4" cols="50" name="description" form = "usrform">
-                              Enter text here...</textarea>
-							  
-							
-							</td>
-         
-				
-				         </tr>
-						 <tr>
-							
-							<td valign="bottom">
-								<select>
-									<option>Red Cross</option>
-									<option>Shomoy Club</option>
-									<option>Jago faoundation</option>
-								</select>
-							</td>
-						</tr>
-						<tr>
-							<td valign="bottom"><input type="submit" value="Submit" /> </td>
+							<td valign="bottom" align="right"><input type="submit" value="Next" size="50"/> </td>
 						</tr>
 					</table>
 					</fieldset>
@@ -108,5 +69,4 @@
 			<td  valign="top" colspan="2"><center>Copyright 2017</center></td>
 		</tr>	
 	</table>
-	</form>
 </body>
