@@ -26,3 +26,52 @@ function emailValidate(email)
 	}
 	
 }
+
+function usernameValidate(username)
+{
+	if(username.length === 0)
+	{
+		return false;
+	}
+	return true;
+}
+
+function passwordValidate(password)
+{
+	if(password.length < 5 )
+	{
+		
+		return false;
+	}
+	else 
+	{
+		if(containsNumber(password))
+		{
+			return true;
+		}
+		
+		return false;
+	}
+		
+	
+}
+
+
+function confirmPasswordValidate(password, confirmPassword)
+{
+	
+	
+}
+
+function containsNumber(value)
+{
+	var len = value.length;
+	
+	for(var i = 0; i<len; i++)
+	{
+		if(Number.isInteger(value[i]))
+			return true;
+	}
+	
+	return false;
+}

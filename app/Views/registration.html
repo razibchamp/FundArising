@@ -1,3 +1,5 @@
+
+
 <body>
 	
 	<table align="center" border="1" width="1000" height="550"  cellpadding="10" cellspacing="0" >
@@ -9,22 +11,33 @@
 		<tr>				
 			<td valign="top">
 				
-				<form >
+				<form id="registration" onsubmit="return (regValidate());">
 				<div>	
 					<fieldset >
 					<legend><b>Registration Information</b></legend>
 						
-							<b>Name</b>   &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp   :<input name="name" /><br/>
+							<b>Name</b>   &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp   :<input name="name" />
+							<span id="nameSpan" > sdfdf</span>
+							<br/>
 							<hr/>
 							<hr/>
-							<b>Email</b>  &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp :<input name="email"/><br/>
+							<b>Email</b>  &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp :<input name="email"/>
+							<span id="emailSpan" > sdfsd</span>
+							<br/>
 							<hr/>
 							<hr/>
-							<b>User Name</b> &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp  :<input name="username"/><br/>
+							<b>User Name</b> &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp  :<input name="username"/>
+							<span id="usernameSpan" > sdfsd</span>
+							<br/>
+							
 							<hr/>
 							<hr/>
-							<b>Password</b> &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp  &nbsp  :<input type="password" name="password"/><br/><hr/>
-							<b>Confirm Password</b> &nbsp &nbsp  &nbsp :<input type="password" name="confirmPassword" /><br/><hr/>	
+							<b>Password</b> &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp  &nbsp  :<input type="password" name="password"/>
+							<span id="passwordSpan" > sdfsdf</span>
+							<br/><hr/>
+							<b>Confirm Password</b> &nbsp &nbsp  &nbsp :<input type="password" name="confirmPassword" />
+							<span id="confirmPasswordSpan" > sdfsd</span>
+							<br/><hr/>	
 											
 						<input type="submit" value="Submit" />
 						
@@ -41,3 +54,6 @@
 		</tr>	
 	</table>
 </body>
+
+<script src="../../Js/registration_validation.js" > </script>
+<script src="../../Js/utility.js" > </script>
