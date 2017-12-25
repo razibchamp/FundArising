@@ -17,10 +17,15 @@
 	}
 	else
 	{
-		$person = array( "name" => $_POST['name'],"email" => $_POST['email'],"username" => $_POST['username'],"password" => $_POST['password']);
+		if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['username']) && isset($_POST['password']))
+		{
+			$person = array( "name" => $_POST['name'],"email" => $_POST['email'],"username" => $_POST['username'],"password" => $_POST['password']);
 		
-		addPersonToDb($person);
+			addPersonToDb($person);
 		
-		require_once "../Views/userprofile.html";
+			require_once "../Views/userprofile.html";
+			
+		}
+			
 	}
 ?>
