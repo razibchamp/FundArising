@@ -15,7 +15,6 @@ function emailValidate(email)
 	var arr;
 	
 	arr = email.split("@");
-	console.log(arr.length);
 	if(arr.length >= 2)
 	{
 		arr = arr[1].split(".");
@@ -45,7 +44,7 @@ function passwordValidate(password)
 	}
 	else 
 	{
-		if(containsNumber(password))
+		if(containsNumber(password)) 
 		{
 			return true;
 		}
@@ -60,7 +59,13 @@ function passwordValidate(password)
 function confirmPasswordValidate(password, confirmPassword)
 {
 	
+	console.log("hello");
+	if(password == confirmPassword)
+	{
+		return true;
+	}
 	
+	return false;
 }
 
 function containsNumber(value)
@@ -69,8 +74,10 @@ function containsNumber(value)
 	
 	for(var i = 0; i<len; i++)
 	{
-		if(Number.isInteger(value[i]))
+		if(Number.isInteger(parseInt(value[i])))
+		{
 			return true;
+		}			
 	}
 	
 	return false;

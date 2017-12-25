@@ -6,7 +6,7 @@ function regValidate()
 	var email = regForm.email.value;
 	var name = regForm.name.value;
 	var password = regForm.password.value;
-	var confirmPasswordSpan = regForm.confirmPassword.value;
+	var confirmPassword = regForm.confirmPassword.value;
 	var username = regForm.username.value;
 		
 	console.log(password);
@@ -42,6 +42,12 @@ function regValidate()
 	if(!passwordValidate(password))
 	{
 		passwordSpan.innerHTML += "password should contain more than 5 characters<br/>it should contain some digit";
+		flag++;
+	}
+	
+	if(!confirmPasswordValidate(password, confirmPassword))
+	{
+		confirmPasswordSpan.innerHTML += "password doesn't match";
 		flag++;
 	}
 	
