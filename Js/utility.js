@@ -58,8 +58,6 @@ function passwordValidate(password)
 
 function confirmPasswordValidate(password, confirmPassword)
 {
-	
-	console.log("hello");
 	if(password == confirmPassword)
 	{
 		return true;

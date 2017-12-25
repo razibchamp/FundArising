@@ -9,7 +9,6 @@ function regValidate()
 	var confirmPassword = regForm.confirmPassword.value;
 	var username = regForm.username.value;
 		
-	console.log(password);
 	
 	var nameSpan = document.getElementById("nameSpan");
 	var emailSpan = document.getElementById("emailSpan");
@@ -24,6 +23,13 @@ function regValidate()
 	confirmPasswordSpan.innerHTML = ""; 
 
 	var flag = 0;
+	
+	if(!nameValidate(name))
+	{
+		nameSpan.innerHTML += "name must be filled<br/>";
+		flag++;
+	}
+	
 	if(!emailValidate(email))
 	{
 		
@@ -31,11 +37,30 @@ function regValidate()
 		flag++;
 	}
 	
-	
-	if(!nameValidate(name))
+	if(username.length > 0)
 	{
-		nameSpan.innerHTML += "name must be filled<br/>";
-		flag++;
+		var xhttp = new XMLHttpRequest();
+		
+		//console.log(xhttp);
+		
+		xhttp.onreadystatechange = function ()
+		{
+			if(this.readyState == 4 && this.status == 200)
+			{
+				console.log(this.responseText);
+				if(this.responseText == 1)
+				{
+					console.log("found");
+					usernameSpan.innerHTML += "username exists";
+					flag++;
+				}
+					
+			}
+			
+		};
+		
+		xhttp.open("GET", "https://localhost/fundArising/app/Controllers/registration_controller.php?username=" + username, false);
+		xhttp.send();		
 	}
 	
 	
@@ -57,8 +82,8 @@ function regValidate()
 		return false;
 		
 	}
-	
-	return true;
+	else
+		return true;
 	
 	
 }

@@ -1,9 +1,9 @@
-<?php require_once "data/data_access.php"; ?>
+<?php require_once "data_access.php"; ?>
 <?php
 	
 	///register 
 	function addpersonToDb($person){
-        $sql = "INSERT INTO persons(userid,name,email,username,password,confirmpassword) VALUES(NULL,'$person[name]','$person[email]','$person[username]','$person[password]','$person[confirmpassword]')";
+        $sql = "INSERT INTO persons(userid,name,email,username,password) VALUES(NULL,'$person[name]','$person[email]','$person[username]','$person[password]')";
         $result = executeSQL($sql);
         return $result;
     }
@@ -45,4 +45,15 @@
         
         return $funds;
     }
+	
+	//search by username
+	function findPersonByUserName($username)
+	{
+		$sql = "SELECT * FROM persons WHERE username='$username'";
+		
+		$result = executeSQL($sql);
+		$res = mysqli_fetch_assoc($result);
+		
+		return $res;
+	}
 ?>
