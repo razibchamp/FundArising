@@ -27,9 +27,22 @@
         $result = executeSQL($sql);
         return $result;
     }
+	////serchblog
+	function getBlogByTitleFromDb($blogtitle){
+        $sql = "SELECT * FROM fund WHERE name LIKE '%$blogtitle%'";
+        $result = executeSQL($sql);
+        
+        $funds = array();
+        for($i=0; $row = mysqli_fetch_assoc($result); ++$i){
+            $funds[$i] = $row;
+        }
+        
+        return $blogtitle;
+    }
+	
 	////add fund
 	function addfundToDb($fund){
-        $sql = "INSERT INTO fund(fundid,title,funddetails,raised,goal) VALUES(NULL,'$fund[title]','$fund[funddetails]','$fund[raised]','$fund[goal]')";
+        $sql = "INSERT INTO fund(fundid,fundtitle,funddetails,raised,goal) VALUES(NULL,'$fund[fundtitle]','$fund[funddetails]','$fund[raised]','$fund[goal]')";
         $result = executeSQL($sql);
         return $result;
     }
@@ -46,7 +59,7 @@
         return $funds;
     }
 	
-	//search by username
+	////search by username
 	function findPersonByUserName($username)
 	{
 		$sql = "SELECT * FROM persons WHERE username='$username'";
@@ -56,5 +69,30 @@
 		
 		return $res;
 	}
+	///// search person by Name
+	function getPersonsByNameFromDb($personName){
+        $sql = "SELECT * FROM person WHERE name LIKE '%$personName%'";
+        $result = executeSQL($sql);
+        
+        $persons = array();
+        for($i=0; $row = mysqli_fetch_assoc($result); ++$i){
+            $persons[$i] = $row;
+        }
+        
+        return $persons;
+    }
+	
+	/// search by Email
+	function getPersonsByEmailFromDb($personEmail){
+        $sql = "SELECT * FROM person WHERE email LIKE '%$personEmail%'";
+        $result = executeSQL($sql);
+        
+        $persons = array();
+        for($i=0; $row = mysqli_fetch_assoc($result); ++$i){
+            $persons[$i] = $row;
+        }
+        
+        return $persons;
+    }
 	
 ?>
