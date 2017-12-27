@@ -21,4 +21,14 @@
 	 function getFundByTitle($fundtitle){
         return getFundsByTitleFromDb($fundtitle);
     }
+	 function getBlogByTitle($blogtitle){
+        return getBlogByTitleFromDb($blogtitle);
+    }
+	
+	 function getPersonsByName($personName){
+        return getPersonsByNameFromDb($personName);
+    }
+	function getPersonsByEmail($personEmail){
+        return getPersonsByEmailFromDb($personEmail);
+    }
 ?>
