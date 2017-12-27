@@ -23,7 +23,7 @@
     }
 	////createblog
 	function addblogToDb($blog){
-        $sql = "INSERT INTO blogs(blogid,title,blogdate,details) VALUES(NULL,'$blog[title]','$blog[blogdate]','$blog[details]')";
+        $sql = "INSERT INTO blogs(blogid,title,blogdate,blogdetails,userid) VALUES(NULL,'$blog[title]','$blog[blogdate]','$blog[blogdetails]','$blog[userid]')";
         $result = executeSQL($sql);
         return $result;
     }
