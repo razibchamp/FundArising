@@ -1,3 +1,4 @@
+
 <body>
 	
 	<table align="center" border="1" width="1000" height="550"  cellpadding="10" cellspacing="0" >
@@ -7,8 +8,12 @@
 			<td height="30">
 				<h2 align="center">PROFILE</h2>
 				<p align="right"> Logged in as 
-					<a href="userinfo.html">USERNAME</a> 
-					<a href="index.html">LOGOUT</a>
+					<a href="userinfo.html">
+					<?php
+							echo $_SESSION["username"];
+					?>
+					</a> &nbsp | &nbsp
+					<a href="../Controllers/logout_controller.php">LOGOUT</a>
 				</p>
 
 			</td>

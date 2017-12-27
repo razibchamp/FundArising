@@ -28,17 +28,7 @@
         return $result;
     }
 	////serchblog
-	function getBlogByTitleFromDb($blogtitle){
-        $sql = "SELECT * FROM fund WHERE name LIKE '%$blogtitle%'";
-        $result = executeSQL($sql);
-        
-        $funds = array();
-        for($i=0; $row = mysqli_fetch_assoc($result); ++$i){
-            $funds[$i] = $row;
-        }
-        
-        return $blogtitle;
-    }
+	
 	
 	////add fund
 	function addfundToDb($fund){
@@ -69,6 +59,18 @@
 		
 		return $res;
 	}
+	
+	
+	function findUserIdByUserName($username)
+	{
+		$sql = "SELECT userid FROM persons WHERE username='$username'";
+		
+		$result = executeSQL($sql);
+		$res = mysqli_fetch_assoc($result);
+		
+		return $res['userid'];
+	}
+	
 	///// search person by Name
 	function getPersonsByNameFromDb($personName){
         $sql = "SELECT * FROM person WHERE name LIKE '%$personName%'";

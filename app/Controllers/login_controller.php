@@ -1,28 +1,16 @@
 <?php session_start(); ?>
 <?php require_once "../../data/person_data_access.php"; ?>
 <?php require_once "../../data/login_data_access.php"; ?>
-<?php
+
+<?php 
 	
-	if(count($_GET) == 1)
+	if(isset($_POST["username"]) && isset($_POST["password"]))
 	{
-		$res = findPersonByUserName($_GET['username']);
+		$res = findPersonByUserName($_POST["username"]);
 		
-		if(count($res) >= 1)
+		if($res["password"] == $_POST["password"])
 		{
-			echo 1;
-		}
-		else
-		{
-			echo 0;
-		}
-	}
-	else
-	{
-		if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['username']) && isset($_POST['password']))
-		{
-			$person = array( "name" => $_POST['name'],"email" => $_POST['email'],"username" => $_POST['username'],"password" => $_POST['password']);
-		
-			addPersonToDb($person);
+			
 			
 			$userid = findUserIdByUserName($_POST['username']);
 			date_default_timezone_set("Asia/Dhaka");
@@ -33,10 +21,7 @@
 			$_SESSION["userid"] = $userid;
 			$_SESSION["username"] = $_POST["username"];
 			
-			
 			require_once "../Views/userprofile.html";
-			
 		}
-			
 	}
 ?>
