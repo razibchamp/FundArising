@@ -1,5 +1,20 @@
-
-
+<?php
+	session_start();
+	$_SESSION['image'] = $_FILES;
+	$target ="../Views/img/".basename($_FILES['image']['name']);
+	
+	if(move_uploaded_file($_FILES['image']['tmp_name'], $target))
+		{
+			echo "imaged added";
+		}
+		else
+		{
+			echo "problem";
+		}
+		
+		
+	var_dump($_SESSION);
+?>
 
 <body>
 	
@@ -32,20 +47,20 @@
 				<!-- </B> -->
 				
 
-				<form action="campaignCharityImg.html">
+				<form action="../Controllers/campaignCharity_post_controller.php" method="post">
 					<fieldset width="400">
 					<table align="center">
 					
 						<tr>
 							<td>
 								<h2>
-									Search for charity
+									charity
 								</h2>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<input type="text" name="searchCharity" />
+								<input type="text" name="charityName" />
 							</td>
 						</tr>
 						

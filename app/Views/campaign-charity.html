@@ -1,3 +1,4 @@
+<script src="../../Js/charity_post_validate.js" > </script>
 
 <body>
 	
@@ -33,7 +34,7 @@
 					This page is to create new fund rising event for charity
 				</h1>
 
-				<form action="campaignCharityImg.php">
+				<form id="charityPostFirst" action="campaignCharityImg.php" method="post" onsubmit="return (postFirstValidate());">
 					<fieldset width="400">
 					<table align="left">
 						<colgroup span="2">
@@ -45,10 +46,16 @@
 							<td>
 								Title: <input type="text" size="60" name="title"/>
 							</td>
+							
+							<td>
+								<span id="deserr" > sdfdf</span><br/>
+								<span id="titleerr" > sdfdf</span><br/>
+								<span id="goalMoneyerr" > sdfdf</span><br/>
+							</td>
 						</tr>
 						<tr>			
 							<td>
-								<br/>Description: <br/><textarea type="text" cols="70" rows="15" name="title"></textarea>
+								<br/>Description: <br/><textarea type="text" cols="70" rows="15" name="description"></textarea>
 							</td>
 						</tr>
 						
@@ -76,3 +83,4 @@
 		</tr>	
 	</table>
 </body>
+

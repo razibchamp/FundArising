@@ -6,7 +6,7 @@
 	
 	if(isset($_SESSION["username"]))
 	{
-		require_once "../Views/userprofile.html";
+		echo $_SESSION["userid"];
 	}
 	else if(isset($_POST["username"]) && isset($_POST["password"]))
 	{
@@ -25,7 +25,7 @@
 			$_SESSION["userid"] = $userid;
 			$_SESSION["username"] = $_POST["username"];
 			
-			require_once "../Views/userprofile.html";
+			echo $_SESSION["userid"];
 		}
 	}
 ?>

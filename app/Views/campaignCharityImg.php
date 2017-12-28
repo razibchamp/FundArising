@@ -1,5 +1,13 @@
+<?php
+	session_start();
+	
+	$_SESSION['title'] = $_POST['title'];
+	$_SESSION['description'] = $_POST['description'];
+	$_SESSION['goalMoney'] = $_POST['goalMoney'];
+	var_dump($_SESSION);
+?>
 
-
+<script src="../../Js/charity_post_validate.js" > </script>
 
 <body>
 	
@@ -35,18 +43,18 @@
 					This page is to create new fund rising event for charity
 				</h1>
 
-				<form action="campaignCharityOthers.html" >
+				<form  action="campaignCharityOthers.php" method="post" enctype="multipart/form-data">
 					<fieldset width="400">
 					<table>
 						
 						<tr>
 							<td align="center">
-								<img src="img/researchFund.jpg" height="300"align="center" border="2" hspace="250px"/>
+								<img src="img/researchFund.jpg" id="target" height="300"align="center" border="2" hspace="250px"/>
 							</td>
-						</tr>						
+						</tr>					
 						<tr>
 							<td align="center">
-								<input type="file" name="charityImg" accept="image/*" value="bro"/>
+								<input type="file" id="fileChooser" name="image" onchange="postSecondValidate.call(this)"/>
 							</td>
 						</tr>
 						
