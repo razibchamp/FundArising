@@ -9,5 +9,18 @@
     }
 	
 	
+	//// search charity
+	function getAllFundsFromDb(){
+        $sql = "SELECT * FROM fund";
+        $result = executeSQL($sql);
+        
+        $funds = array();
+        for($i=0; $row = mysqli_fetch_assoc($result); ++$i){
+            $funds[$i] = $row;
+        }
+        
+        return $funds;
+    }
+	
 
 ?>

@@ -4,7 +4,7 @@
 	$_SESSION['title'] = $_POST['title'];
 	$_SESSION['description'] = $_POST['description'];
 	$_SESSION['goalMoney'] = $_POST['goalMoney'];
-	var_dump($_SESSION);
+	//var_dump($_SESSION);
 ?>
 
 <script src="../../Js/charity_post_validate.js" > </script>

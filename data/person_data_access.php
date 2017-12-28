@@ -30,25 +30,6 @@
 	////serchblog
 	
 	
-	////add fund
-	function addfundToDb($fund){
-        $sql = "INSERT INTO fund(fundid,fundtitle,funddetails,raised,goal) VALUES(NULL,'$fund[fundtitle]','$fund[funddetails]','$fund[raised]','$fund[goal]')";
-        $result = executeSQL($sql);
-        return $result;
-    }
-	//// search charity
-	function getFundsByTitleFromDb($fundtitle){
-        $sql = "SELECT * FROM fund WHERE name LIKE '%$fundtitle%'";
-        $result = executeSQL($sql);
-        
-        $funds = array();
-        for($i=0; $row = mysqli_fetch_assoc($result); ++$i){
-            $funds[$i] = $row;
-        }
-        
-        return $funds;
-    }
-	
 	////search by username
 	function findPersonByUserName($username)
 	{
@@ -73,7 +54,7 @@
 	
 	///// search person by Name
 	function getPersonsByNameFromDb($personName){
-        $sql = "SELECT * FROM person WHERE name LIKE '%$personName%'";
+        $sql = "SELECT * FROM persons WHERE name LIKE '%$personName%'";
         $result = executeSQL($sql);
         
         $persons = array();
@@ -84,9 +65,19 @@
         return $persons;
     }
 	
+	function getPersonByIdFromDb($personId){
+        $sql = "SELECT * FROM persons WHERE userid='$personId'";
+        $result = executeSQL($sql);
+        
+        $person = array();
+		$person = mysqli_fetch_assoc($result);
+        
+        return $person;
+    }
+	
 	/// search by Email
 	function getPersonsByEmailFromDb($personEmail){
-        $sql = "SELECT * FROM person WHERE email LIKE '%$personEmail%'";
+        $sql = "SELECT * FROM persons WHERE email LIKE '%$personEmail%'";
         $result = executeSQL($sql);
         
         $persons = array();
