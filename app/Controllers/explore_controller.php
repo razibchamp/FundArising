@@ -7,7 +7,7 @@
 	//var_dump($funds);
 	
 	$ctr = count($funds);
-	
+	$i;
 	for($i = 0; $i < $ctr; $i++)
 	{
 		$person = getPersonByIdFromDb($funds[$i]["userid"]);

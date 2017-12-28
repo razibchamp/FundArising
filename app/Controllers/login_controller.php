@@ -4,6 +4,13 @@
 
 <?php 
 	
+	if(empty($_POST["username"]) && empty($_POST["password"]))
+	{	
+		echo '<script>
+		window.location.replace("https://localhost/fundArising/app/Views/login.html");
+		</script>';
+		
+	}
 	if(isset($_SESSION["username"]))
 	{
 		require_once "../Views/userprofile.html";
@@ -29,3 +36,4 @@
 		}
 	}
 ?>
+
