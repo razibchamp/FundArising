@@ -7,8 +7,12 @@
 			<td height="30">
 				<h2 align="center">PROFILE</h2>
 				<p align="right"> Logged in as 
-					<a href="userinfo.html">USERNAME</a> 
-					<a href="index.html">LOGOUT</a>
+					<a href="userinfo.html">
+					<?php
+							echo $_SESSION["username"];
+					?>
+					</a> &nbsp | &nbsp
+					<a href="../Controllers/logout_controller.php">LOGOUT</a>
 				</p>
 
 			</td>
@@ -17,16 +21,14 @@
 		<tr>
 			<td height="20">
 				
-				<a href="userinfo.html">Personal Information</a>&nbsp &nbsp &nbsp  
-
-				<a href="campains.html">Campaigns</a> &nbsp &nbsp &nbsp
+				<a href="../Views/userinfo.html">Personal Information</a>&nbsp &nbsp &nbsp  
 				<a href="blogPersonal.html">Blogs</a> &nbsp &nbsp &nbsp
 				<a href="explore.html">Campaigns</a> &nbsp &nbsp &nbsp
 
 				<a href="reports.html">Reports</a> &nbsp &nbsp &nbsp
 				<a href="userhistory.html">User History</a> &nbsp &nbsp &nbsp
-				<a href="editprofile.html">Edit Profile</a> &nbsp &nbsp &nbsp
-				<a href="changepassword.html">Change Password</a> &nbsp &nbsp &nbsp
+				<a href="../Controllers/editprofilecontroller.php">Edit Profile</a> &nbsp &nbsp &nbsp
+				<a href="../Controllers/changepasscontroller.php">Change Password</a> &nbsp &nbsp &nbsp
 				
 			</td>			
 		</tr >	
@@ -34,26 +36,18 @@
 		<tr>
 				
 			<td valign="top">
-				<fieldset>
-					<legend>EDIT PROFILE</legend>
-						
-							Name   : <input  /><br/>
-								<hr/>
-								Email  :<input  /><br/>
-								<hr/>
-								Gender :<input name="$gender" value="Male"  type="radio"/>Male
-								<input name="$gender" type="radio" value="Female" />Female
-								<input name="$gender" type="radio" value="Other"  />Other
-								<br/>
-								<hr/>
-								Date of Birth:<input  /><br/>
-								 &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp &nbsp  <i>(dd/mm/yyyy)</i>
-								<hr/> 
+				<form action="../Controllers/updateprofilecontroller.php" method="post">
+					<fieldset>
+						<legend>EDIT PROFILE</legend>
 							
-							
-							<input type="Submit"/>
-				</fieldset>
-		
+								Name   : <input  name="name" value=<?php echo "$name";?>><br/>
+									<hr/>
+									Email  :<input name="email"  value=<?php echo "$email";?>><br/>
+									<hr/>
+									
+								<input type="Submit"/>
+					</fieldset>
+				</form>
 			</td>
 												
 		</tr>

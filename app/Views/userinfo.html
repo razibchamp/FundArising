@@ -5,21 +5,26 @@
 		<tr>
 			<td height="30"><h2 align="center">PROFILE</h2>
 				<p align="right"> Logged in as 
-					<a href="userinfo.html">USERNAME</a>
-					<a href="index.html">LOGOUT</p>
+					<a href="userinfo.html">
+					<?php
+							echo $_SESSION["username"];
+					?>
+					</a> &nbsp | &nbsp
+					<a href="../Controllers/logout_controller.php">LOGOUT</a>
+				</p>
 			</td>
 			
 		</tr>
 		<tr>
 			<td height="20">
 				
-				<a href="userinfo.html">Personal Information</a>&nbsp &nbsp &nbsp  
-				<a href="campains.html">Campaigns</a> &nbsp &nbsp &nbsp
+				<a href="../Views/userinfo.html">Personal Information</a>&nbsp &nbsp &nbsp  
+				<a href="explore.html">Campaigns</a> &nbsp &nbsp &nbsp
 				<a href="blogPersonal.html">Blogs</a> &nbsp &nbsp &nbsp
 				<a href="reports.html">Reports</a> &nbsp &nbsp &nbsp
 				<a href="userhistory.html">User History</a>&nbsp &nbsp &nbsp
-				<a href="editprofile.html">Edit Profile</a> &nbsp &nbsp &nbsp
-				<a href="changepassword.html">Change Password</a> &nbsp &nbsp &nbsp
+				<<a href="../Controllers/editprofilecontroller.php"> Edit Profile </a> &nbsp &nbsp &nbsp
+				<a href="../Controllers/changepasscontroller.php">Change Password</a> &nbsp &nbsp &nbsp
 				
 			</td>			
 		</tr >	
@@ -31,15 +36,7 @@
 							Name  :<br/>
 							<hr/>
 							Email  :<br/>
-							<hr/>
-							Gender: <br/>
-							<hr/>
-							Role:<br/>
-							<hr/>
-							Date of Birth:<br/>
-							<hr/>
-							Contact Number:<br/>
-                            <hr/>							
+							<hr/>			
 			</td>
 												
 		</tr>

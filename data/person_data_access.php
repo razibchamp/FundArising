@@ -1,3 +1,4 @@
+
 <?php require_once "data_access.php"; ?>
 <?php
 	
@@ -8,16 +9,17 @@
         return $result;
     }
 	
-	///editprofile
+	///editprofile /////////updateprofile
 	function editpersonToDb($person){
-        $sql = "UPDATE persons SET name='$person[name]',email='$person[email]' WHERE userid=$person[userid]";
+        $sql = "UPDATE persons SET name='$person[name]',email='$person[email]' WHERE userid='$person[userid]'";
         $result = executeSQL($sql);
         return $result;
+		
     }
 	
 	///changepassword
 	function changePasswordToDb($person){
-        $sql = "UPDATE persons SET password='$person[name]',email='$person[email]' WHERE userid=$person[userid]";
+        $sql = "UPDATE persons SET password='$person[password]' WHERE userid='$person[userid]'";
         $result = executeSQL($sql);
         return $result;
     }
@@ -45,11 +47,31 @@
 	function findUserIdByUserName($username)
 	{
 		$sql = "SELECT userid FROM persons WHERE username='$username'";
+		//$result = mysqli_query($conn, "SELECT Name,Email,Gender,Day,Month,Year FROM users WHERE username= '".$username."'");
 		
+		// $sql ="SELECT Name,Email FROM persons WHERE username='$username'";
 		$result = executeSQL($sql);
 		$res = mysqli_fetch_assoc($result);
+		//$row = mysqli_fetch_assoc($result);
 		
 		return $res['userid'];
+		
+		//var_dump($row);
+	}
+	
+	function findUserInfoByUserName($username)
+	{
+		//$sql = "SELECT userid FROM persons WHERE username='$username'";
+		//$result = mysqli_query($conn, "SELECT Name,Email,Gender,Day,Month,Year FROM users WHERE username= '".$username."'");
+		
+		 $sql ="SELECT Name,Email FROM persons WHERE username='$username'";
+		$result = executeSQL($sql);
+		$res = mysqli_fetch_assoc($result);
+		//$row = mysqli_fetch_assoc($result);
+		
+		return $res;
+		
+		//var_dump($row);
 	}
 	
 	///// search person by Name
