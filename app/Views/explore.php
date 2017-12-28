@@ -8,9 +8,9 @@
 		<tr>
 			<td height="20">
 				
-				<a href="index.html">Home</a>&nbsp &nbsp &nbsp  
-				<a href="create.html">Create</a> &nbsp &nbsp &nbsp
-				<a href="login.html">Login</a>
+				<a href="../Views/index.html">Home</a>&nbsp &nbsp &nbsp  
+				<a href="../Views/create.html">Create</a> &nbsp &nbsp &nbsp
+				<a href="../Views/login.html">Login</a>
 				
 			</td>			
 		</tr >	
